@@ -1,19 +1,20 @@
 package com.sample.hiddencalculator
 
 import android.app.Activity
+import android.app.ActivityManager
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SecondActivity : AppCompatActivity() {
 
-    private lateinit var calcTV : TextView
     private lateinit var firstET : EditText
     private lateinit var secondET : EditText
     private lateinit var resultB : Button
@@ -36,14 +37,11 @@ class SecondActivity : AppCompatActivity() {
         firstET = findViewById(R.id.firstET)
         secondET = findViewById(R.id.secondET)
         resultB = findViewById(R.id.resultB)
-        calcTV = findViewById(R.id.calcTV)
-
 
         addB = findViewById(R.id.addB)
         subtractB = findViewById(R.id.subtractB)
         multiplyB = findViewById(R.id.multiplyB)
         divideB = findViewById(R.id.divideB)
-
 
         addB.setOnClickListener { operation = "+" }
         subtractB.setOnClickListener { operation = "-" }
@@ -67,10 +65,10 @@ class SecondActivity : AppCompatActivity() {
                     result = num1 / num2
                 }
             }
-            calcTV.text = result.toString()
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("result", result.toString())
-            startActivity(intent)
+            setResult(RESULT_OK, intent)
+            finish()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -79,6 +77,8 @@ class SecondActivity : AppCompatActivity() {
             insets
         }
     }
+
+
 
 
 }

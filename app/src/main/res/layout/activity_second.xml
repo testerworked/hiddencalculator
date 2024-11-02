@@ -74,13 +74,5 @@
         app:layout_constraintTop_toBottomOf="@+id/divideB"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/calcTV"
-        android:layout_width="115dp"
-        android:layout_height="45dp"
-        android:text="@string/send_data_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultB" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

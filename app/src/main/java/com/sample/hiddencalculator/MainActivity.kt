@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -25,15 +27,10 @@ class MainActivity : AppCompatActivity() {
         textInfoTV = findViewById(R.id.textInfoTV)
         transferDataB = findViewById(R.id.transferDataB)
 
-        if (intent.hasExtra("result")) {
-            getResult = intent.getStringExtra("result").toString()
-            textInfoTV.text = "$getResult"
-        }
-
         transferDataB.setOnClickListener {
             if(textInfoTV.text.isEmpty()) return@setOnClickListener
             val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
+            launchSomeActivity.launch(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -41,5 +38,19 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    private val launchSomeActivity = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){result ->
+        if (result.resultCode == RESULT_OK){
+            val data = result.data
+            getResult = data!!.getStringExtra("result").toString()
+            textInfoTV.text = "$getResult"
+            Toast.makeText(this,"$result", Toast.LENGTH_LONG).show()
+        }else{
+            Toast.makeText(this,"Cancelled", Toast.LENGTH_LONG).show()
+        }
+
     }
 }
