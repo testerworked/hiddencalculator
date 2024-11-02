@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,18 +13,25 @@ import com.sample.hiddencalculator.SecondActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textET: EditText
+    private lateinit var textInfoTV: TextView
     private lateinit var transferDataB: Button
+    private var getResult: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        textET = findViewById(R.id.textET)
+        textInfoTV = findViewById(R.id.textInfoTV)
         transferDataB = findViewById(R.id.transferDataB)
 
+        if (intent.hasExtra("result")) {
+            getResult = intent.getStringExtra("result").toString()
+            textInfoTV.text = "$getResult"
+        }
+
         transferDataB.setOnClickListener {
+            if(textInfoTV.text.isEmpty()) return@setOnClickListener
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }

@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/textET"
+    <TextView
+        android:id="@+id/textInfoTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/send_data_from"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:text="@string/result_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +24,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:text="@string/send_data_button"
+        android:text="@string/open_hidden_calc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textET" />
+        app:layout_constraintTop_toBottomOf="@+id/textInfoTV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

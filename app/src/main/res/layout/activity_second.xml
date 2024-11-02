@@ -8,13 +8,79 @@
     tools:context=".SecondActivity">
 
 
-    <TextView
-        android:id="@+id/textInfoTV"
+    <EditText
+        android:id="@+id/firstET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/first_number"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/secondET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Второе число"
+        app:layout_constraintTop_toBottomOf="@+id/firstET"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/addB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondET"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/subtractB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addB"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/multiplyB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multiplication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtractB"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/divideB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/division"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiplyB"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/resultB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send_data_button"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/divideB"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/calcTV"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="@string/send_data_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultB" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">HiddenCalculator</string>
     <string name="send_data_from">Введите текст</string>
-    <string name="send_data_button">Передать данные</string>
-    <string name="get_data_second">Полученные данные</string>
+    <string name="result_text">Полученный результат</string>
+    <string name="send_data_button">Результат</string>
+    <string name="send_data_button_to">Передать данные</string>
+    <string name="open_hidden_calc">Калькулятор</string>
+    <string name="get_data">Полученные данные</string>
+    <string name="first_number">Первое число</string>
+    <string name="second_number">Второе число</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiplication">*</string>
+    <string name="division">/</string>
+
+
 </resources>
