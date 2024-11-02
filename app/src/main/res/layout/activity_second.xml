@@ -5,26 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SecondActivity">
 
-    <EditText
-        android:id="@+id/textET"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/textInfoTV"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send_data_from"
+        android:text="@string/send_data_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/transferDataB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="@string/send_data_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textET" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
